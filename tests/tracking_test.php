@@ -13,13 +13,15 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-namespace block_course_tracking\tests;
+namespace block_course_tracking;
 /**
- * course tracking block unit test.
+ * PHPUnit block_course_tracking tests
  *
- * @package   block_course_tracking
- * @copyright 2022 Santosh N.
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    block_course_tracking
+ * @category   test
+ * @copyright  2022 Santosh N.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @coversDefaultClass \block_course_tracking
  */
 
 class tracking_test extends \advanced_testcase {

@@ -23,7 +23,6 @@
  */
 
 namespace block_course_tracking\output;
-defined('MOODLE_INTERNAL') || die;
 
 use completion_info;
 use renderer_base;

@@ -21,7 +21,6 @@
  * @copyright 2022 Santosh N.
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
 
 class block_course_tracking extends block_base {
     /**
