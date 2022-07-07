@@ -32,7 +32,7 @@ class block_course_tracking extends block_base {
     }
 
     /**
-     * defines whether multiple instance of this block is allowed
+     * Defines whether multiple instance of this block is allowed
      *
      * @return bool
      */
@@ -41,7 +41,7 @@ class block_course_tracking extends block_base {
     }
 
     /**
-     * define where this block can be added
+     * Define where this block can be added
      *
      * @return array
      */
@@ -55,6 +55,11 @@ class block_course_tracking extends block_base {
         );
     }
 
+    /**
+     * Creates the block's main content
+     *
+     * @return string|stdClass
+     */
     public function get_content() {
         if ($this->content !== null) {
             return $this->content;
@@ -75,6 +80,19 @@ class block_course_tracking extends block_base {
         $this->content->text = $renderer->render($renderable);
 
         return $this->content;
+    }
+
+    /**
+     * This block shouldn't be added to a page if its not course view page.
+     *
+     * @param moodle_page $page
+     * @return bool
+     */
+    public function can_block_be_added(moodle_page $page): bool {
+        if (strpos($page->pagetype, 'course-view-') >= 0) {
+            return true;
+        }
+        return false;
     }
 
 }
