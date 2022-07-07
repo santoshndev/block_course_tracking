@@ -21,6 +21,7 @@
  * @copyright  2022 Santosh N.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace block_course_tracking\output;
 defined('MOODLE_INTERNAL') || die;
 

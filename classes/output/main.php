@@ -28,13 +28,13 @@ defined('MOODLE_INTERNAL') || die;
 use completion_info;
 use renderer_base;
 
-class main implements \renderable, \templatable
-{
+class main implements \renderable, \templatable {
 
     /**
      * Get Activities with completion status
+     *
      * @return array
-    */
+     */
     public function block_course_tracking_get_activities(): array {
         global $COURSE, $USER;
         $completion = new completion_info($COURSE);
@@ -50,13 +50,13 @@ class main implements \renderable, \templatable
             $activitycompletiondata = $completion->get_data($activity, true, $USER->id);
 
             $results[] = array(
-                'cmid' => $activity->id,
-                'activityname' => $activity->name,
-                'timecreated' => userdate($activity->added, '%d-%b-%Y', 99, false),
-                'link' => $activity->url->out(),
-                'completionstate' => ($activitycompletiondata->completionstate == COMPLETION_COMPLETE_PASS ||
-                    $activitycompletiondata->completionstate == COMPLETION_COMPLETE) ?
-                    get_string('completed', 'block_course_tracking') : '',
+                    'cmid' => $activity->id,
+                    'activityname' => $activity->name,
+                    'timecreated' => userdate($activity->added, '%d-%b-%Y', 99, false),
+                    'link' => $activity->url->out(),
+                    'completionstate' => ($activitycompletiondata->completionstate == COMPLETION_COMPLETE_PASS ||
+                            $activitycompletiondata->completionstate == COMPLETION_COMPLETE) ?
+                            get_string('completed', 'block_course_tracking') : '',
             );
         }
 
@@ -72,7 +72,7 @@ class main implements \renderable, \templatable
      */
     public function export_for_template(renderer_base $output): array {
         return array(
-            'activities' => $this->block_course_tracking_get_activities()
+                'activities' => $this->block_course_tracking_get_activities()
         );
     }
 }

@@ -26,30 +26,32 @@ defined('MOODLE_INTERNAL') || die();
 class block_course_tracking extends block_base {
     /**
      * Sets the title of the block
-    */
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_course_tracking');
     }
 
     /**
      * defines whether multiple instance of this block is allowed
+     *
      * @return bool
-    */
+     */
     public function instance_allow_multiple(): bool {
         return false;
     }
 
     /**
      * define where this block can be added
+     *
      * @return array
-    */
+     */
     public function applicable_formats(): array {
         return array(
-            'course-view' => true,
-            'site-index' => false,
-            'mod' => false,
-            'my' => false,
-            'site' => false
+                'course-view' => true,
+                'site-index' => false,
+                'mod' => false,
+                'my' => false,
+                'site' => false
         );
     }
 
