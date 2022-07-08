@@ -53,8 +53,8 @@ class main implements \renderable, \templatable {
                     'activityname' => $activity->name,
                     'timecreated' => userdate($activity->added, '%d-%b-%Y', 99, false),
                     'link' => $activity->url->out(),
-                    'completionstate' => ($activitycompletiondata->completionstate == COMPLETION_COMPLETE_PASS ||
-                            $activitycompletiondata->completionstate == COMPLETION_COMPLETE) ?
+                    'completionstate' => (($activitycompletiondata->completionstate == COMPLETION_COMPLETE_PASS) ||
+                            ($activitycompletiondata->completionstate == COMPLETION_COMPLETE)) ?
                             get_string('completed', 'block_course_tracking') : '',
             );
         }
